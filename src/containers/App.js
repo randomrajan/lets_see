@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
-import Person from './Person/Person';
+import classes from './App.css';
+import Person from '../components/Persons/Person/Person';
 
 class App extends Component {
   state = {
@@ -22,7 +22,7 @@ class App extends Component {
     const person = {
       ...this.state.persons[personIndex]
     };
-
+    
     // const person = Object.assign({}, this.state.persons[personIndex]);
 
     person.name = event.target.value;
@@ -46,13 +46,7 @@ class App extends Component {
   }
 
   render () {
-    const style = {
-      backgroundColor: 'green',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer'
-    };
+   
 
     let persons = null;
 
@@ -69,24 +63,24 @@ class App extends Component {
           })}
         </div>
       );
-      style.backgroundColor = 'red';
+      
     }
 
-    const classes = [];
+    const unclasses = [];
     if(this.state.persons.length <= 2)
     {
-      classes.push('red');
+      unclasses.push('red');
     }
     if(this.state.persons.length <= 1)
     {
-      classes.push('bold');
+      unclasses.push('bold');
     }
     return (
-      <div className="App">
+      <div className='App'>
         <h1>Hi, I'm a React App</h1>
-        <p className = {classes}>This is really working!</p>
+        <p className = {unclasses}>This is really working!</p>
         <button
-          style={style}
+          
           onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
       </div>
