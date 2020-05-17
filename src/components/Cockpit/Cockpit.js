@@ -3,6 +3,7 @@ import classes from './Cockpit.css'
 
 const cockpit = (props) => {
     const unclasses = [];
+    // eslint-disable-next-line no-unused-vars
     let btnClass = '';
     if (props.showPersons) {
         btnClass = classes.Red;
@@ -18,11 +19,11 @@ const cockpit = (props) => {
     }
 
     return(
-        <div className = {classes.Cockpit}>
+        <div className = "Cockpit">
             <h1>Hi, I'm a React App</h1>
             <p className = {unclasses.join( '' )}>This is really working!</p>
             <button
-            onClick={this.togglePersonsHandler}>Toggle Persons</button>
+            onClick={props.clicked}>Toggle Persons</button>
         </div>
     );
 };
